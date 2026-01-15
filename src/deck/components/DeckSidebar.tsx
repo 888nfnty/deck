@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { DECK_META } from '../deckContent';
+import { DECK_LINKS, DECK_META } from '../deckContent';
 
 type NavItem = {
   id: string;
@@ -25,7 +25,7 @@ export const DeckSidebar: React.FC<DeckSidebarProps> = ({ items, activeId, onNav
       <aside className="hidden md:fixed md:inset-y-0 md:left-0 md:z-30 md:flex md:w-64 md:flex-col md:border-r md:border-white/10 md:bg-black/30 md:p-8 md:backdrop-blur-xl">
         <div className="flex items-center gap-3">
           <img src="/better-isotype-light.svg" alt="BETTER" className="h-8 w-auto" />
-          <div className="text-[12px] text-white/70">VC Deck</div>
+          <div className="text-[13px] text-white/70">VC Deck</div>
         </div>
 
         <div className="mt-8 space-y-2">
@@ -36,7 +36,7 @@ export const DeckSidebar: React.FC<DeckSidebarProps> = ({ items, activeId, onNav
                 key={item.id}
                 onClick={() => onNavigate(item.id)}
                 className={
-                  `w-full text-left text-[12px] tracking-wide ` +
+                  `w-full text-left text-[13px] tracking-wide ` +
                   `border border-white/10 px-3 py-2 transition ` +
                   (isActive
                     ? 'bg-white/10 text-white border-white/20'
@@ -54,14 +54,23 @@ export const DeckSidebar: React.FC<DeckSidebarProps> = ({ items, activeId, onNav
             href={DECK_META.calendlyUrl}
             target="_blank"
             rel="noreferrer"
-            className="block border border-white/20 bg-white/5 px-4 py-3 text-center text-[12px] tracking-wide text-white hover:bg-white/10"
+            className="block border border-white/20 bg-white/5 px-4 py-3 text-center text-[13px] tracking-wide text-white hover:bg-white/10"
           >
             Get in Touch
           </a>
-          <div className="mt-4 text-[11px] leading-5 text-white/55">
-            {DECK_META.siteUrl}
-            <br />
-            {DECK_META.handle} · {DECK_META.email}
+
+          <div className="mt-4 space-y-1 text-[12px] leading-6 text-white/55">
+            {DECK_LINKS.map((l) => (
+              <a
+                key={l.label}
+                href={l.url}
+                target={l.url.startsWith('mailto:') ? undefined : '_blank'}
+                rel={l.url.startsWith('mailto:') ? undefined : 'noreferrer'}
+                className="block text-white/60 hover:text-white"
+              >
+                {l.label}
+              </a>
+            ))}
           </div>
         </div>
       </aside>
@@ -71,7 +80,7 @@ export const DeckSidebar: React.FC<DeckSidebarProps> = ({ items, activeId, onNav
         <div className="flex items-center justify-between px-4 py-3">
           <div className="flex items-center gap-3">
             <img src="/better-isotype-light.svg" alt="BETTER" className="h-7 w-auto" />
-            <div className="text-[11px] text-white/70">{activeLabel}</div>
+            <div className="text-[12px] text-white/70">{activeLabel}</div>
           </div>
 
           <div className="flex items-center gap-2">
@@ -79,13 +88,13 @@ export const DeckSidebar: React.FC<DeckSidebarProps> = ({ items, activeId, onNav
               href={DECK_META.calendlyUrl}
               target="_blank"
               rel="noreferrer"
-              className="border border-white/20 bg-white/5 px-3 py-2 text-[11px] text-white"
+              className="border border-white/20 bg-white/5 px-3 py-2 text-[12px] text-white"
             >
               Get in Touch
             </a>
             <button
               onClick={() => setMobileOpen((v) => !v)}
-              className="border border-white/20 bg-transparent px-3 py-2 text-[11px] text-white/80"
+              className="border border-white/20 bg-transparent px-3 py-2 text-[12px] text-white/80"
             >
               Menu
             </button>
@@ -101,13 +110,27 @@ export const DeckSidebar: React.FC<DeckSidebarProps> = ({ items, activeId, onNav
                   setMobileOpen(false);
                 }}
                 className={
-                  `w-full text-left px-3 py-2 text-[12px] border border-transparent ` +
+                  `w-full text-left px-3 py-2 text-[13px] border border-transparent ` +
                   (item.id === activeId ? 'text-white bg-white/10 border-white/10' : 'text-white/70')
                 }
               >
                 {item.label}
               </button>
             ))}
+
+            <div className="mt-2 border-t border-white/10 pt-2">
+              {DECK_LINKS.map((l) => (
+                <a
+                  key={l.label}
+                  href={l.url}
+                  target={l.url.startsWith('mailto:') ? undefined : '_blank'}
+                  rel={l.url.startsWith('mailto:') ? undefined : 'noreferrer'}
+                  className="block px-3 py-2 text-[13px] text-white/60"
+                >
+                  {l.label}
+                </a>
+              ))}
+            </div>
           </div>
         ) : null}
       </div>

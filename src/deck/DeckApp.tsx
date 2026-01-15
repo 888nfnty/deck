@@ -4,15 +4,18 @@ import {
   ASK,
   BUSINESS_MODEL,
   CORE_CLAIMS,
+  DECK_LINKS,
   DECK_META,
-  FOUNDER,
   MOAT_POINTS,
   PARTNERS,
   PRODUCT_POINTS,
   PROGRAMMATIC_FUNDING_SCHEDULE,
   PROBLEM_POINTS,
+  STRATEGY_PHASES,
   SLIDE_NAV,
   SOLUTION_POINTS,
+  TEAM,
+  THESIS,
   TOKENOMICS,
   TRACTION_POINTS,
 } from './deckContent';
@@ -32,13 +35,13 @@ const SectionTitle: React.FC<{ kicker?: string; title: string; subtitle?: string
 }) => (
   <div>
     {kicker ? (
-      <div className="text-[12px] tracking-wide text-white/60">{kicker}</div>
+      <div className="text-[13px] tracking-wide text-white/60">{kicker}</div>
     ) : null}
-    <h2 className="mt-2 text-[26px] leading-tight text-white md:text-[38px]">
+    <h2 className="mt-2 text-[30px] leading-tight text-white md:text-[44px]">
       {title}
     </h2>
     {subtitle ? (
-      <div className="mt-3 max-w-2xl text-[12px] leading-6 text-white/70 md:text-[13px]">
+      <div className="mt-3 max-w-2xl text-[14px] leading-7 text-white/70 md:text-[15px]">
         {subtitle}
       </div>
     ) : null}
@@ -48,7 +51,7 @@ const SectionTitle: React.FC<{ kicker?: string; title: string; subtitle?: string
 const BulletList: React.FC<{ items: readonly string[] }> = ({ items }) => (
   <ul className="mt-6 space-y-3">
     {items.map((item) => (
-      <li key={item} className="flex gap-3 text-[12px] leading-6 text-white/85">
+      <li key={item} className="flex gap-3 text-[14px] leading-7 text-white/85">
         <span className="mt-[8px] h-1 w-1 flex-none rounded-full bg-white/60" />
         <span>{item}</span>
       </li>
@@ -61,7 +64,7 @@ const BadgeRow: React.FC<{ items: readonly string[] }> = ({ items }) => (
     {items.map((x) => (
       <span
         key={x}
-        className="border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/70"
+        className="border border-white/10 bg-white/5 px-3 py-1 text-[12px] text-white/70"
       >
         {x}
       </span>
@@ -75,9 +78,9 @@ const MetricCard: React.FC<{ label: string; value: string; note?: string }> = ({
   note,
 }) => (
   <GlassCard className="p-6">
-    <div className="text-[11px] text-white/60">{label}</div>
-    <div className="mt-2 text-[28px] leading-none text-white md:text-[34px]">{value}</div>
-    {note ? <div className="mt-3 text-[11px] leading-5 text-white/60">{note}</div> : null}
+    <div className="text-[12px] text-white/60">{label}</div>
+    <div className="mt-2 text-[32px] leading-none text-white md:text-[40px]">{value}</div>
+    {note ? <div className="mt-3 text-[12px] leading-6 text-white/60">{note}</div> : null}
   </GlassCard>
 );
 
@@ -136,39 +139,84 @@ export const DeckApp: React.FC = () => {
                     alt="BETTER"
                     className="h-10 w-auto"
                   />
-                  <div className="text-[12px] tracking-wide text-white/60">BETTER</div>
+                  <div className="text-[13px] tracking-wide text-white/60">BETTER</div>
                 </div>
 
-                <h1 className="mt-6 text-[34px] leading-tight text-white md:text-[54px]">
+                <h1 className="mt-6 text-[42px] leading-tight text-white md:text-[64px]">
                   {DECK_META.title}
                 </h1>
 
-                <div className="mt-4 text-[12px] tracking-[0.2em] text-white/70">
+                <div className="mt-4 text-[13px] tracking-[0.2em] text-white/70">
                   {DECK_META.tagline}
                 </div>
 
                 <div className="mt-8 flex flex-wrap items-center gap-3">
-                  <span className="border border-white/20 bg-white/5 px-4 py-2 text-[12px] text-white">
+                  <span className="border border-white/20 bg-white/5 px-4 py-2 text-[13px] text-white">
                     {DECK_META.raiseLine}
                   </span>
                   <a
                     href={DECK_META.calendlyUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="border border-white/20 bg-white/10 px-4 py-2 text-[12px] text-white hover:bg-white/15"
+                    className="border border-white/20 bg-white/10 px-4 py-2 text-[13px] text-white hover:bg-white/15"
                   >
                     Get in Touch
                   </a>
                 </div>
 
-                <div className="mt-6 text-[12px] leading-6 text-white/65">
+                <div className="mt-4 flex flex-wrap items-center gap-2">
+                  <a
+                    href={DECK_META.xUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="border border-white/20 bg-transparent px-3 py-2 text-[13px] text-white/80 hover:bg-white/5"
+                  >
+                    X
+                  </a>
+                  <a
+                    href={DECK_META.telegramUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="border border-white/20 bg-transparent px-3 py-2 text-[13px] text-white/80 hover:bg-white/5"
+                  >
+                    Telegram
+                  </a>
+                  <a
+                    href={DECK_META.thesisUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="border border-white/20 bg-transparent px-3 py-2 text-[13px] text-white/80 hover:bg-white/5"
+                  >
+                    Thesis / Genesis
+                  </a>
+                  <a
+                    href={DECK_META.openservUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="border border-white/20 bg-transparent px-3 py-2 text-[13px] text-white/80 hover:bg-white/5"
+                  >
+                    OpenServ
+                  </a>
+                </div>
+
+                <div className="mt-6 text-[13px] leading-7 text-white/65">
                   <div>
                     <a className="text-white/90" href={DECK_META.siteUrl} target="_blank" rel="noreferrer">
                       {DECK_META.siteUrl}
                     </a>
                   </div>
-                  <div>
-                    {DECK_META.handle} (X + TG) · {DECK_META.email}
+                  <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1">
+                    <a className="text-white/85 hover:text-white" href={DECK_META.xUrl} target="_blank" rel="noreferrer">
+                      {DECK_META.handle}
+                    </a>
+                    <span className="text-white/30">•</span>
+                    <a className="text-white/75 hover:text-white" href={DECK_META.telegramUrl} target="_blank" rel="noreferrer">
+                      t.me/betterterminal
+                    </a>
+                    <span className="text-white/30">•</span>
+                    <a className="text-white/75 hover:text-white" href={DECK_META.emailUrl}>
+                      {DECK_META.email}
+                    </a>
                   </div>
                 </div>
 
@@ -177,22 +225,22 @@ export const DeckApp: React.FC = () => {
 
               <div className="md:col-span-5">
                 <GlassCard className="p-6">
-                  <div className="text-[12px] text-white/70">What BETTER is</div>
-                  <div className="mt-3 text-[13px] leading-6 text-white">
-                    A DeFi & RWA ecosystem powered by automated exposure to prediction markets.
+                  <div className="text-[13px] text-white/70">What BETTER is</div>
+                  <div className="mt-3 text-[15px] leading-7 text-white">
+                    A rails-first terminal + vault system that turns prediction-market signals into automated yield.
                   </div>
                   <div className="mt-6 grid gap-3">
                     <div className="border border-white/10 bg-black/25 p-4">
-                      <div className="text-[11px] text-white/60">Terminal</div>
-                      <div className="mt-1 text-[12px] text-white">Elite-wallet signal feed</div>
+                      <div className="text-[12px] text-white/60">Terminal</div>
+                      <div className="mt-1 text-[14px] text-white">Elite-wallet signal feed</div>
                     </div>
                     <div className="border border-white/10 bg-black/25 p-4">
-                      <div className="text-[11px] text-white/60">Vaults</div>
-                      <div className="mt-1 text-[12px] text-white">Agents trade for depositors</div>
+                      <div className="text-[12px] text-white/60">Vaults</div>
+                      <div className="mt-1 text-[14px] text-white">Agents trade for depositors</div>
                     </div>
                     <div className="border border-white/10 bg-black/25 p-4">
-                      <div className="text-[11px] text-white/60">Infra</div>
-                      <div className="mt-1 text-[12px] text-white">Rust HFT stack + co-location</div>
+                      <div className="text-[12px] text-white/60">Infra</div>
+                      <div className="mt-1 text-[14px] text-white">Rust HFT stack + co-location</div>
                     </div>
                   </div>
                 </GlassCard>
@@ -212,8 +260,8 @@ export const DeckApp: React.FC = () => {
                 <BulletList items={PROBLEM_POINTS} />
 
                 <GlassCard className="mt-8 p-6">
-                  <div className="text-[12px] text-white/70">The retail reality</div>
-                  <div className="mt-3 text-[12px] leading-6 text-white/80">
+                  <div className="text-[13px] text-white/70">The retail reality</div>
+                  <div className="mt-3 text-[14px] leading-7 text-white/80">
                     A delayed signal becomes stale odds. BETTER is built to compete at machine speed.
                   </div>
                 </GlassCard>
@@ -238,17 +286,24 @@ export const DeckApp: React.FC = () => {
 
                 <div className="mt-8 grid gap-3 md:grid-cols-2">
                   <GlassCard className="p-5">
-                    <div className="text-[11px] text-white/60">Powered by</div>
-                    <div className="mt-2 text-[12px] text-white">BRAID bounded reasoning</div>
-                    <div className="mt-2 text-[11px] leading-5 text-white/60">
-                      Higher agent accuracy with lower inference capex.
+                    <div className="text-[12px] text-white/60">Powered by</div>
+                    <a
+                      href={DECK_META.openservUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-2 inline-block text-[14px] text-white hover:underline"
+                    >
+                      OpenServ BRAID (bounded reasoning)
+                    </a>
+                    <div className="mt-2 text-[12px] leading-6 text-white/60">
+                      Bounded Mermaid graphs reduce drift and improve reliability and cost-efficiency.
                     </div>
                   </GlassCard>
                   <GlassCard className="p-5">
-                    <div className="text-[11px] text-white/60">Built in</div>
-                    <div className="mt-2 text-[12px] text-white">Rust for HFT</div>
-                    <div className="mt-2 text-[11px] leading-5 text-white/60">
-                      Designed to minimize tick-to-trade latency.
+                    <div className="text-[12px] text-white/60">Built in</div>
+                    <div className="mt-2 text-[14px] text-white">Rust for HFT</div>
+                    <div className="mt-2 text-[12px] leading-6 text-white/60">
+                      Deterministic execution + routing engineered for low tick-to-trade latency.
                     </div>
                   </GlassCard>
                 </div>
@@ -279,8 +334,8 @@ export const DeckApp: React.FC = () => {
               </div>
               <div className="md:col-span-5">
                 <GlassCard className="p-6">
-                  <div className="text-[12px] text-white/70">Execution discipline</div>
-                  <div className="mt-3 space-y-3 text-[12px] leading-6 text-white/80">
+                  <div className="text-[13px] text-white/70">Execution discipline</div>
+                  <div className="mt-3 space-y-3 text-[14px] leading-7 text-white/80">
                     <div>• Inference is bounded; execution is deterministic.</div>
                     <div>• Admissibility, edge tests, caps, and idempotent order lifecycle.</div>
                     <div>• Malformed inference outputs → abstain (never unsafe trades).</div>
@@ -302,20 +357,20 @@ export const DeckApp: React.FC = () => {
 
                 <div className="mt-8 grid gap-3 md:grid-cols-2">
                   <GlassCard className="p-6">
-                    <div className="text-[11px] text-white/60">Macro shift</div>
-                    <div className="mt-2 text-[12px] leading-6 text-white">
+                    <div className="text-[12px] text-white/60">Macro shift</div>
+                    <div className="mt-2 text-[14px] leading-7 text-white">
                       “Casino” fatigue in perps → demand for truth-settled markets.
                     </div>
                   </GlassCard>
                   <GlassCard className="p-6">
-                    <div className="text-[11px] text-white/60">Tech shift</div>
-                    <div className="mt-2 text-[12px] leading-6 text-white">
+                    <div className="text-[12px] text-white/60">Tech shift</div>
+                    <div className="mt-2 text-[14px] leading-7 text-white">
                       CLOB + onchain data + agents → retail-grade automation.
                     </div>
                   </GlassCard>
                   <GlassCard className="p-6 md:col-span-2">
-                    <div className="text-[11px] text-white/60">BETTER wedge</div>
-                    <div className="mt-2 text-[12px] leading-6 text-white">
+                    <div className="text-[12px] text-white/60">BETTER wedge</div>
+                    <div className="mt-2 text-[14px] leading-7 text-white">
                       Unify signal quality + machine-speed execution across Polymarket, Kalshi, and Opinion.
                     </div>
                   </GlassCard>
@@ -323,8 +378,8 @@ export const DeckApp: React.FC = () => {
               </div>
               <div className="md:col-span-5">
                 <GlassCard className="p-6">
-                  <div className="text-[12px] text-white/70">Near-term platform plan</div>
-                  <div className="mt-4 space-y-3 text-[12px] leading-6 text-white/80">
+                  <div className="text-[13px] text-white/70">Near-term platform plan</div>
+                  <div className="mt-4 space-y-3 text-[14px] leading-7 text-white/80">
                     <div>• Start with Polymarket execution + Base deposits.</div>
                     <div>• Expand to Kalshi + Opinion by March 2026.</div>
                     <div>• Become the infra partner for prediction markets.</div>
@@ -336,27 +391,49 @@ export const DeckApp: React.FC = () => {
 
           {/* Slide 6 */}
           <SlideSection id="s6">
-            <SectionTitle
-              kicker="Traction (pre-TGE)"
-              title="Infra + dataset ahead of launch"
-              subtitle="We’re pre-TGE: no TVL and no live trades yet — but the signal engine + execution stack are built and tested." 
-            />
+            <div className="grid gap-10 md:grid-cols-12 md:gap-12">
+              <div className="md:col-span-5">
+                <SectionTitle kicker="Strategy" title={THESIS.headline} subtitle={THESIS.body} />
 
-            <div className="mt-10 grid gap-3 md:grid-cols-3">
-              <MetricCard label="Signals collected" value={CORE_CLAIMS.totalSignals} note={`Over ${CORE_CLAIMS.totalSignalsWindow}`} />
-              <MetricCard label="Signals/day" value={CORE_CLAIMS.signalsPerDay} note="Elite-wallet trade setups" />
-              <MetricCard label="Latency" value={CORE_CLAIMS.latency} note={CORE_CLAIMS.latencyDefinition} />
-            </div>
-
-            <GlassCard className="mt-8 p-6">
-              <div className="text-[12px] text-white/70">What counts as a “signal”</div>
-              <div className="mt-3 text-[12px] leading-6 text-white/80">
-                A trade setup emitted from elite wallets / traders with unfair informational access — distilled for machine execution.
+                <GlassCard className="mt-8 p-6">
+                  <div className="text-[13px] text-white/70">Links</div>
+                  <div className="mt-4 grid gap-2">
+                    {DECK_LINKS.map((l) => (
+                      <a
+                        key={l.label}
+                        href={l.url}
+                        target={l.url.startsWith('mailto:') ? undefined : '_blank'}
+                        rel={l.url.startsWith('mailto:') ? undefined : 'noreferrer'}
+                        className="border border-white/15 bg-white/5 px-4 py-3 text-[13px] text-white/80 hover:bg-white/10"
+                      >
+                        <span className="text-white/60">{l.label}:</span> {l.url.replace(/^mailto:/, '')}
+                      </a>
+                    ))}
+                  </div>
+                </GlassCard>
               </div>
-            </GlassCard>
 
-            <div className="mt-6">
-              <BulletList items={TRACTION_POINTS} />
+              <div className="md:col-span-7">
+                <div className="grid gap-3 md:grid-cols-3">
+                  {STRATEGY_PHASES.map((p) => (
+                    <GlassCard key={p.phase} className="p-6">
+                      <div className="text-[13px] text-white/70">{p.phase}</div>
+                      <div className="mt-2 text-[16px] leading-snug text-white">{p.title}</div>
+                      <div className="mt-3 text-[13px] leading-6 text-white/80">
+                        <span className="text-white/60">Pain:</span> {p.pain}
+                      </div>
+                      <ul className="mt-4 space-y-2 text-[13px] leading-6 text-white/75">
+                        {p.mechanism.map((m) => (
+                          <li key={m} className="flex gap-3">
+                            <span className="mt-[8px] h-1 w-1 flex-none rounded-full bg-white/50" />
+                            <span>{m}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </GlassCard>
+                  ))}
+                </div>
+              </div>
             </div>
           </SlideSection>
 
@@ -365,11 +442,60 @@ export const DeckApp: React.FC = () => {
             <div className="grid gap-10 md:grid-cols-12 md:gap-12">
               <div className="md:col-span-7">
                 <SectionTitle
+                  kicker="Traction (pre-TGE)"
+                  title="Infra + dataset ahead of launch"
+                  subtitle="We’re pre-TGE: no TVL and no live trades yet — but the signal engine + execution stack are built and tested." 
+                />
+
+                <div className="mt-10 grid gap-3 md:grid-cols-3">
+                  <MetricCard label="Signals collected" value={CORE_CLAIMS.totalSignals} note={`Over ${CORE_CLAIMS.totalSignalsWindow}`} />
+                  <MetricCard label="Signals/day" value={CORE_CLAIMS.signalsPerDay} note="Elite-wallet trade setups" />
+                  <MetricCard label="Latency" value={CORE_CLAIMS.latency} note={CORE_CLAIMS.latencyDefinition} />
+                </div>
+
+                <GlassCard className="mt-8 p-6">
+                  <div className="text-[13px] text-white/70">What counts as a “signal”</div>
+                  <div className="mt-3 text-[14px] leading-7 text-white/80">
+                    A trade setup emitted from elite wallets / traders with unfair informational access — distilled for machine execution.
+                  </div>
+                  <div className="mt-3 text-[13px] leading-6 text-white/60">
+                    Monthly backtest snapshots will be published post-TGE.
+                  </div>
+                </GlassCard>
+
+                <div className="mt-6">
+                  <BulletList items={TRACTION_POINTS} />
+                </div>
+              </div>
+
+              <div className="md:col-span-5">
+                <div className="space-y-3">
+                  <GlassCard className="p-6">
+                    <div className="text-[13px] text-white/70">Signals → agents → execution</div>
+                    <div className="mt-4 text-[14px] leading-7 text-white/80">
+                      BETTER turns signal quality into machine-speed action, targeting the short-lived alpha window.
+                    </div>
+                  </GlassCard>
+                  <AlphaDecayTimeline />
+                </div>
+              </div>
+            </div>
+          </SlideSection>
+
+          {/* Slide 8 */}
+          <SlideSection id="s8">
+            <div className="grid gap-10 md:grid-cols-12 md:gap-12">
+              <div className="md:col-span-7">
+                <SectionTitle
                   kicker="Moat"
                   title="Execution speed + bounded agents"
                   subtitle={CORE_CLAIMS.positioning}
                 />
                 <BulletList items={MOAT_POINTS} />
+
+                <div className="mt-6 text-[13px] leading-7 text-white/60">
+                  Institutional partnership: <a className="text-white/85 hover:underline" href={DECK_META.openservUrl} target="_blank" rel="noreferrer">openserv.ai</a>
+                </div>
               </div>
               <div className="md:col-span-5">
                 <MoatMatrix />
@@ -377,8 +503,8 @@ export const DeckApp: React.FC = () => {
             </div>
           </SlideSection>
 
-          {/* Slide 8 */}
-          <SlideSection id="s8">
+          {/* Slide 9 */}
+          <SlideSection id="s9">
             <SectionTitle
               kicker="Business"
               title="Token-gated access + B2B infrastructure revenue"
@@ -387,27 +513,27 @@ export const DeckApp: React.FC = () => {
 
             <div className="mt-10 grid gap-3 md:grid-cols-3">
               <GlassCard className="p-6">
-                <div className="text-[11px] text-white/60">Vault fees</div>
-                <div className="mt-2 text-[12px] leading-6 text-white">
+                <div className="text-[12px] text-white/60">Vault fees</div>
+                <div className="mt-2 text-[14px] leading-7 text-white">
                   {BUSINESS_MODEL.performanceFee}, {BUSINESS_MODEL.performanceFeeTiming}.
                 </div>
-                <div className="mt-3 text-[11px] leading-5 text-white/60">{BUSINESS_MODEL.noLossFees}</div>
+                <div className="mt-3 text-[12px] leading-6 text-white/60">{BUSINESS_MODEL.noLossFees}</div>
               </GlassCard>
               <GlassCard className="p-6">
-                <div className="text-[11px] text-white/60">Token utility</div>
-                <div className="mt-2 text-[12px] leading-6 text-white">{BUSINESS_MODEL.accessGate}</div>
-                <div className="mt-3 text-[11px] leading-5 text-white/60">{BUSINESS_MODEL.domeApiOption}</div>
+                <div className="text-[12px] text-white/60">Token utility</div>
+                <div className="mt-2 text-[14px] leading-7 text-white">{BUSINESS_MODEL.accessGate}</div>
+                <div className="mt-3 text-[12px] leading-6 text-white/60">{BUSINESS_MODEL.domeApiOption}</div>
               </GlassCard>
               <GlassCard className="p-6">
-                <div className="text-[11px] text-white/60">B2B + API</div>
-                <div className="mt-2 text-[12px] leading-6 text-white">{BUSINESS_MODEL.b2b}</div>
-                <div className="mt-3 text-[11px] leading-5 text-white/60">{BUSINESS_MODEL.llm}</div>
+                <div className="text-[12px] text-white/60">B2B + API</div>
+                <div className="mt-2 text-[14px] leading-7 text-white">{BUSINESS_MODEL.b2b}</div>
+                <div className="mt-3 text-[12px] leading-6 text-white/60">{BUSINESS_MODEL.llm}</div>
               </GlassCard>
             </div>
           </SlideSection>
 
-          {/* Slide 9 */}
-          <SlideSection id="s9">
+          {/* Slide 10 */}
+          <SlideSection id="s10">
             <SectionTitle
               kicker="Token"
               title="Tokenomics + access gate"
@@ -417,13 +543,13 @@ export const DeckApp: React.FC = () => {
             <div className="mt-10 grid gap-10 md:grid-cols-12 md:gap-12">
               <div className="md:col-span-6">
                 <GlassCard className="p-6">
-                  <div className="text-[12px] text-white/70">Allocation</div>
+                  <div className="text-[13px] text-white/70">Allocation</div>
                   <div className="mt-5 space-y-4">
                     {TOKENOMICS.allocations.map((a) => (
                       <div key={a.label}>
                         <div className="flex items-center justify-between gap-3">
-                          <div className="text-[12px] text-white">{a.label}</div>
-                          <div className="text-[11px] text-white/60">
+                          <div className="text-[14px] text-white">{a.label}</div>
+                          <div className="text-[13px] text-white/60">
                             {a.percent}% · {a.amount}
                           </div>
                         </div>
@@ -433,7 +559,7 @@ export const DeckApp: React.FC = () => {
                             style={{ width: `${a.percent}%` }}
                           />
                         </div>
-                        <div className="mt-2 text-[11px] leading-5 text-white/55">{a.note}</div>
+                        <div className="mt-2 text-[12px] leading-6 text-white/55">{a.note}</div>
                       </div>
                     ))}
                   </div>
@@ -442,15 +568,15 @@ export const DeckApp: React.FC = () => {
 
               <div className="md:col-span-6 space-y-3">
                 <GlassCard className="p-6">
-                  <div className="text-[12px] text-white/70">Access gate (hold/stake)</div>
+                  <div className="text-[13px] text-white/70">Access gate (hold/stake)</div>
                   <div className="mt-4 space-y-3">
                     {ACCESS_GATE_PHASES.map((p) => (
                       <div key={p.phase} className="border border-white/10 bg-black/20 p-4">
                         <div className="flex flex-wrap items-center justify-between gap-2">
-                          <div className="text-[12px] text-white">{p.phase}</div>
-                          <div className="text-[11px] text-white/60">Gate: {p.gate}</div>
+                          <div className="text-[14px] text-white">{p.phase}</div>
+                          <div className="text-[13px] text-white/60">Gate: {p.gate}</div>
                         </div>
-                        <ul className="mt-2 space-y-1 text-[11px] text-white/60">
+                        <ul className="mt-2 space-y-1 text-[12px] text-white/60">
                           {p.examples.map((e) => (
                             <li key={e}>• {e}</li>
                           ))}
@@ -458,30 +584,30 @@ export const DeckApp: React.FC = () => {
                       </div>
                     ))}
                   </div>
-                  <div className="mt-4 text-[11px] text-white/55">
+                  <div className="mt-4 text-[12px] leading-6 text-white/55">
                     Terminal gate halves if DomeAPI execution is enabled.
                   </div>
                 </GlassCard>
 
                 <GlassCard className="p-6">
-                  <div className="text-[12px] text-white/70">Programmatic funding (10%)</div>
+                  <div className="text-[13px] text-white/70">Programmatic funding (10%)</div>
                   <div className="mt-4 overflow-x-auto">
                     <table className="w-full min-w-[520px] border-collapse text-left">
                       <thead>
                         <tr className="border-b border-white/10">
-                          <th className="py-2 pr-3 text-[11px] font-medium text-white/60">FDV range</th>
-                          <th className="py-2 pr-3 text-[11px] font-medium text-white/60">Sold</th>
-                          <th className="py-2 pr-3 text-[11px] font-medium text-white/60">Raise</th>
-                          <th className="py-2 text-[11px] font-medium text-white/60">Cumulative</th>
+                          <th className="py-2 pr-3 text-[12px] font-medium text-white/60">FDV range</th>
+                          <th className="py-2 pr-3 text-[12px] font-medium text-white/60">Sold</th>
+                          <th className="py-2 pr-3 text-[12px] font-medium text-white/60">Raise</th>
+                          <th className="py-2 text-[12px] font-medium text-white/60">Cumulative</th>
                         </tr>
                       </thead>
                       <tbody>
                         {PROGRAMMATIC_FUNDING_SCHEDULE.map((row) => (
                           <tr key={row.range} className="border-b border-white/5">
-                            <td className="py-2 pr-3 text-[11px] text-white/80">{row.range}</td>
-                            <td className="py-2 pr-3 text-[11px] text-white/70">{row.soldPercent}</td>
-                            <td className="py-2 pr-3 text-[11px] text-white/70">{row.raiseUsd}</td>
-                            <td className="py-2 text-[11px] text-white/70">{row.cumulativeUsd}</td>
+                            <td className="py-2 pr-3 text-[12px] text-white/80">{row.range}</td>
+                            <td className="py-2 pr-3 text-[12px] text-white/70">{row.soldPercent}</td>
+                            <td className="py-2 pr-3 text-[12px] text-white/70">{row.raiseUsd}</td>
+                            <td className="py-2 text-[12px] text-white/70">{row.cumulativeUsd}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -492,8 +618,34 @@ export const DeckApp: React.FC = () => {
             </div>
           </SlideSection>
 
-          {/* Slide 10 */}
-          <SlideSection id="s10">
+          {/* Slide 11 */}
+          <SlideSection id="s11">
+            <SectionTitle
+              kicker="Team"
+              title="Market-making DNA + execution engineering"
+              subtitle="Two-person quant team: one builds the rails, one defines the trading logic." 
+            />
+
+            <div className="mt-10 grid gap-3 md:grid-cols-2">
+              {TEAM.map((m) => (
+                <GlassCard key={m.name} className="p-6">
+                  <div className="text-[16px] text-white">{m.name}</div>
+                  <div className="mt-1 text-[13px] text-white/70">{m.title}</div>
+                  <ul className="mt-5 space-y-2 text-[13px] leading-6 text-white/80">
+                    {m.bullets.map((b) => (
+                      <li key={b} className="flex gap-3">
+                        <span className="mt-[8px] h-1 w-1 rounded-full bg-white/60" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </GlassCard>
+              ))}
+            </div>
+          </SlideSection>
+
+          {/* Slide 12 */}
+          <SlideSection id="s12">
             <div className="grid gap-10 md:grid-cols-12 md:gap-12">
               <div className="md:col-span-7">
                 <SectionTitle
@@ -503,13 +655,13 @@ export const DeckApp: React.FC = () => {
                 />
 
                 <GlassCard className="mt-8 p-6">
-                  <div className="text-[12px] text-white/70">Use of funds</div>
+                  <div className="text-[13px] text-white/70">Use of funds</div>
                   <div className="mt-5 space-y-3">
                     {ASK.useOfFunds.map((u) => (
                       <div key={u.label}>
                         <div className="flex items-center justify-between">
-                          <div className="text-[12px] text-white">{u.label}</div>
-                          <div className="text-[11px] text-white/60">{u.percent}%</div>
+                          <div className="text-[14px] text-white">{u.label}</div>
+                          <div className="text-[13px] text-white/60">{u.percent}%</div>
                         </div>
                         <div className="mt-2 h-2 w-full border border-white/10 bg-black/20">
                           <div
@@ -522,26 +674,12 @@ export const DeckApp: React.FC = () => {
                   </div>
                 </GlassCard>
 
-                <GlassCard className="mt-8 p-6">
-                  <div className="text-[12px] text-white/70">Team</div>
-                  <div className="mt-3 text-[13px] text-white">{FOUNDER.name}</div>
-                  <div className="mt-1 text-[12px] text-white/70">{FOUNDER.title}</div>
-                  <ul className="mt-4 space-y-2 text-[12px] leading-6 text-white/80">
-                    {FOUNDER.bullets.map((b) => (
-                      <li key={b} className="flex gap-3">
-                        <span className="mt-[8px] h-1 w-1 rounded-full bg-white/60" />
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </GlassCard>
-
                 <div className="mt-8 flex flex-wrap items-center gap-3">
                   <a
                     href={DECK_META.calendlyUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="border border-white/20 bg-white/10 px-5 py-3 text-[12px] text-white hover:bg-white/15"
+                    className="border border-white/20 bg-white/10 px-5 py-3 text-[13px] text-white hover:bg-white/15"
                   >
                     Get in Touch
                   </a>
@@ -549,7 +687,7 @@ export const DeckApp: React.FC = () => {
                     href={DECK_META.siteUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="border border-white/20 bg-transparent px-5 py-3 text-[12px] text-white/80 hover:bg-white/5"
+                    className="border border-white/20 bg-transparent px-5 py-3 text-[13px] text-white/80 hover:bg-white/5"
                   >
                     tradebetter.app
                   </a>

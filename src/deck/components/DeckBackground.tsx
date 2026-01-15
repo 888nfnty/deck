@@ -18,7 +18,7 @@ export const DeckBackground: React.FC = () => {
         className="pointer-events-none fixed inset-0 mix-blend-color opacity-[0.35]"
         style={{
           background:
-            'radial-gradient(900px circle at 70% 10%, rgba(0,38,255,0.35) 0%, rgba(0,38,255,0.0) 55%), radial-gradient(700px circle at 20% 70%, rgba(0,255,0,0.12) 0%, rgba(0,255,0,0.0) 55%)',
+            'radial-gradient(900px circle at 70% 10%, rgba(0,38,255,0.40) 0%, rgba(0,38,255,0.0) 55%), radial-gradient(800px circle at 20% 70%, rgba(76,82,111,0.28) 0%, rgba(76,82,111,0.0) 60%)',
         }}
       />
 
