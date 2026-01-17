@@ -2,11 +2,11 @@ import React from 'react';
 import { GlassCard } from '../components/GlassCard';
 
 const STEPS = [
-  { t: 'T plus 0.00 seconds', label: 'News hits the internet' },
-  { t: 'T plus 0.01 seconds', label: 'Automated systems ingest and compute' },
-  { t: 'T plus 0.10 seconds', label: 'The order book reprices' },
-  { t: 'T plus 30.00 seconds', label: 'A person notices' },
-  { t: 'T plus 45.00 seconds', label: 'A person clicks “Buy”' },
+  { t: '0.00 seconds', label: 'News hits the internet' },
+  { t: '0.01 seconds', label: 'Automated systems ingest and compute' },
+  { t: '0.10 seconds', label: 'The order book reprices' },
+  { t: '30.00 seconds', label: 'A person notices' },
+  { t: '45.00 seconds', label: 'A person clicks “Buy”' },
 ] as const;
 
 export const AlphaDecayTimeline: React.FC = () => {
@@ -22,7 +22,7 @@ export const AlphaDecayTimeline: React.FC = () => {
                 (idx <= 2 ? 'bg-better-blue' : idx === 3 ? 'bg-white/40' : 'bg-danger')
               }
             />
-            <div className="w-36 text-[11px] text-white/60">{s.t}</div>
+            <div className="w-24 text-[11px] text-white/60">{s.t}</div>
             <div className="flex-1 text-[14px] text-white">{s.label}</div>
           </div>
         ))}

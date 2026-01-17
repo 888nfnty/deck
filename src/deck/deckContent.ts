@@ -25,9 +25,9 @@ export const DECK_LINKS = [
 export const CORE_CLAIMS = {
   positioning: 'Fastest publicly available prediction market infrastructure for retail traders.',
   signalsPerDay: '10,000–40,000',
-  totalSignals: 'more than ten million',
+  totalSignals: 'More than 10 million',
   totalSignalsWindow: 'approximately five months',
-  latency: 'approximately 0.6 milliseconds',
+  latency: '0.6 milliseconds',
   latencyDefinition:
     'Measured from mempool read to transaction hash on Base, then to order finality on Polymarket (Polygon).',
 } as const;
@@ -250,7 +250,7 @@ export const ROADMAP = [
   },
   {
     when: 'Second quarter of 2026',
-    what: 'In-house open-source model training and application programming interface credits',
+    what: 'In-house open-source LLM model training with sales of its tokens via the OpenRouter API',
   },
   { when: 'First quarter of 2026', what: 'Tokenised vault shares (vBETTER)' },
   { when: 'Second quarter of 2026', what: 'Arbitrage flywheel' },

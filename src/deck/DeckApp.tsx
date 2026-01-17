@@ -76,13 +76,22 @@ const MetricCard: React.FC<{ label: string; value: string; note?: string }> = ({
   label,
   value,
   note,
-}) => (
-  <GlassCard className="p-6">
-    <div className="text-[12px] text-white/60">{label}</div>
-    <div className="mt-2 text-[32px] leading-none text-white md:text-[40px]">{value}</div>
-    {note ? <div className="mt-3 text-[12px] leading-6 text-white/60">{note}</div> : null}
-  </GlassCard>
-);
+}) => {
+  const isLong = value.length > 16;
+  const valueClasses = isLong
+    ? 'mt-2 text-[26px] leading-tight text-white md:text-[32px] break-words whitespace-normal'
+    : 'mt-2 text-[32px] leading-none text-white md:text-[40px] break-words whitespace-normal';
+
+  return (
+    <GlassCard className="p-6">
+      <div className="text-[12px] text-white/60">{label}</div>
+      <div className={valueClasses} style={{ overflowWrap: 'anywhere' }}>
+        {value}
+      </div>
+      {note ? <div className="mt-3 text-[12px] leading-6 text-white/60">{note}</div> : null}
+    </GlassCard>
+  );
+};
 
 export const DeckApp: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -395,18 +404,19 @@ export const DeckApp: React.FC = () => {
               <div className="md:col-span-5">
                 <SectionTitle kicker="Strategy" title={THESIS.headline} subtitle={THESIS.body} />
 
-                <GlassCard className="mt-8 p-6">
-                  <div className="text-[13px] text-white/70">Links</div>
-                  <div className="mt-4 grid gap-2">
+                <GlassCard className="mt-8 p-5">
+                  <div className="text-[12px] text-white/70">Links</div>
+                  <div className="mt-3 flex flex-wrap gap-2">
                     {DECK_LINKS.map((l) => (
                       <a
                         key={l.label}
                         href={l.url}
                         target={l.url.startsWith('mailto:') ? undefined : '_blank'}
                         rel={l.url.startsWith('mailto:') ? undefined : 'noreferrer'}
-                        className="border border-white/15 bg-white/5 px-4 py-3 text-[13px] text-white/80 hover:bg-white/10"
+                        className="border border-white/15 bg-white/5 px-3 py-2 text-[12px] text-white/80 hover:bg-white/10"
+                        title={l.url.replace(/^mailto:/, '')}
                       >
-                        <span className="text-white/60">{l.label}:</span> {l.url.replace(/^mailto:/, '')}
+                        {l.label}
                       </a>
                     ))}
                   </div>
@@ -414,9 +424,12 @@ export const DeckApp: React.FC = () => {
               </div>
 
               <div className="md:col-span-7">
-                <div className="grid gap-3 md:grid-cols-3">
-                  {STRATEGY_PHASES.map((p) => (
-                    <GlassCard key={p.phase} className="p-6">
+                <div className="grid gap-3 md:grid-cols-2">
+                  {STRATEGY_PHASES.map((p, idx) => (
+                    <GlassCard
+                      key={p.phase}
+                      className={`p-6 ${idx === STRATEGY_PHASES.length - 1 ? 'md:col-span-2' : ''}`}
+                    >
                       <div className="text-[13px] text-white/70">{p.phase}</div>
                       <div className="mt-2 text-[16px] leading-snug text-white">{p.title}</div>
                       <div className="mt-3 text-[13px] leading-6 text-white/80">
