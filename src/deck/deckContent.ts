@@ -24,7 +24,7 @@ export const DECK_LINKS = [
 
 export const CORE_CLAIMS = {
   positioning: 'Fastest publicly available prediction market infrastructure for retail traders.',
-  signalsPerDay: '10,000–40,000',
+  signalsPerDay: '10,000 to 40,000',
   totalSignals: 'More than 10 million',
   totalSignalsWindow: 'approximately five months',
   latency: '0.6 milliseconds',

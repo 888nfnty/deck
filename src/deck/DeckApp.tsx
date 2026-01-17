@@ -79,13 +79,13 @@ const MetricCard: React.FC<{ label: string; value: string; note?: string }> = ({
 }) => {
   const isLong = value.length > 16;
   const valueClasses = isLong
-    ? 'mt-2 text-[26px] leading-tight text-white md:text-[32px] break-words whitespace-normal'
-    : 'mt-2 text-[32px] leading-none text-white md:text-[40px] break-words whitespace-normal';
+    ? 'mt-2 text-[26px] leading-tight text-white md:text-[32px] whitespace-normal tabular-nums'
+    : 'mt-2 text-[32px] leading-tight text-white md:text-[40px] whitespace-normal tabular-nums';
 
   return (
     <GlassCard className="p-6">
       <div className="text-[12px] text-white/60">{label}</div>
-      <div className={valueClasses} style={{ overflowWrap: 'anywhere' }}>
+      <div className={valueClasses}>
         {value}
       </div>
       {note ? <div className="mt-3 text-[12px] leading-6 text-white/60">{note}</div> : null}
@@ -335,10 +335,12 @@ export const DeckApp: React.FC = () => {
                 />
                 <BulletList items={PRODUCT_POINTS} />
 
-                <div className="mt-8 grid gap-3 md:grid-cols-3">
+                <div className="mt-8 grid gap-4 md:grid-cols-2">
                   <MetricCard label="Signals per day" value={CORE_CLAIMS.signalsPerDay} note="Elite wallet trade setups" />
                   <MetricCard label="Tick to trade" value={CORE_CLAIMS.latency} note={CORE_CLAIMS.latencyDefinition} />
-                  <MetricCard label="Markets" value="3" note="Polymarket • Kalshi • Opinion" />
+                  <div className="md:col-span-2">
+                    <MetricCard label="Markets" value="3" note="Polymarket • Kalshi • Opinion" />
+                  </div>
                 </div>
               </div>
               <div className="md:col-span-5">
