@@ -2,11 +2,11 @@ import React from 'react';
 import { GlassCard } from '../components/GlassCard';
 
 const STEPS = [
-  { title: 'Signals', desc: 'Elite wallets / informed flow across markets' },
-  { title: 'Agents', desc: 'BRAID-bounded decision records' },
-  { title: 'HFT Exec', desc: 'Rust infra + in-region routing' },
+  { title: 'Signals', desc: 'Elite wallets and informed flow across markets' },
+  { title: 'Agents', desc: 'Bounded decision records' },
+  { title: 'High-frequency trading execution', desc: 'Rust infrastructure and in-region routing' },
   { title: 'Vaults', desc: 'Automated positions for depositors' },
-  { title: 'Yield', desc: 'Users get exposure to prediction-market alpha' },
+  { title: 'Yield', desc: 'Users gain exposure to prediction market alpha' },
 ] as const;
 
 export const PipelineFlow: React.FC = () => {

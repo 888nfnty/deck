@@ -6,7 +6,7 @@ export const MoatMatrix: React.FC = () => {
     <GlassCard className="p-6">
       <div className="flex items-center justify-between">
         <div className="text-[13px] text-white/70">Positioning</div>
-        <div className="text-[12px] text-white/50">Automation × Speed</div>
+        <div className="text-[12px] text-white/50">Automation and speed</div>
       </div>
 
       <div className="mt-5 grid grid-cols-2 gap-3">
@@ -26,7 +26,7 @@ export const MoatMatrix: React.FC = () => {
           <div className="text-[12px] text-white/80">High automation</div>
           <div className="mt-1 text-[14px] text-white">BETTER</div>
           <div className="mt-2 text-[12px] leading-6 text-white/70">
-            Bounded agents + low-latency execution for retail.
+            Bounded agents and low-latency execution for retail.
           </div>
           <div className="pointer-events-none absolute inset-0 opacity-40" style={{
             background:
@@ -36,8 +36,8 @@ export const MoatMatrix: React.FC = () => {
       </div>
 
       <div className="mt-5 flex items-center justify-between text-[12px] text-white/55">
-        <span>← Manual</span>
-        <span>Automation →</span>
+        <span>Manual</span>
+        <span>Automation</span>
       </div>
     </GlassCard>
   );

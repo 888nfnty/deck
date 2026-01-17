@@ -1,8 +1,8 @@
 export const DECK_META = {
-  title: '$BETTER: Ushering the Era of Truth',
-  tagline: 'TRADE // LIVE // EARN // BETTER',
-  raiseLine: 'Raising $500k (SAFE)',
-  siteUrl: 'https://tradebetter.app/',
+  title: 'BETTER: Ushering the Era of Truth',
+  tagline: 'Trade, live, earn, BETTER.',
+  raiseLine: 'Raising US$500,000 via a simple agreement for future equity',
+  siteUrl: 'https://tradebetter.app',
   calendlyUrl: 'https://calendly.com/aryaman-chhaya/openserv-x-better',
   telegramUrl: 'http://t.me/betterterminal',
   xUrl: 'https://x.com/tradebetterapp',
@@ -15,7 +15,7 @@ export const DECK_META = {
 
 export const DECK_LINKS = [
   { label: 'Website', url: DECK_META.siteUrl },
-  { label: 'X', url: DECK_META.xUrl },
+  { label: 'X (formerly Twitter)', url: DECK_META.xUrl },
   { label: 'Telegram', url: DECK_META.telegramUrl },
   { label: 'Thesis', url: DECK_META.thesisUrl },
   { label: 'OpenServ', url: DECK_META.openservUrl },
@@ -23,173 +23,211 @@ export const DECK_LINKS = [
 ] as const;
 
 export const CORE_CLAIMS = {
-  positioning: 'Fastest publicly-available prediction market infra for retail.',
-  signalsPerDay: '10–40k',
-  totalSignals: '10M+',
-  totalSignalsWindow: '~5 months',
-  latency: '~0.6ms',
+  positioning: 'Fastest publicly available prediction market infrastructure for retail traders.',
+  signalsPerDay: '10,000–40,000',
+  totalSignals: 'more than ten million',
+  totalSignalsWindow: 'approximately five months',
+  latency: 'approximately 0.6 milliseconds',
   latencyDefinition:
-    'Measured mempool read → tx hash on Base → order finality on Polymarket (Polygon).',
+    'Measured from mempool read to transaction hash on Base, then to order finality on Polymarket (Polygon).',
 } as const;
 
 export const PROBLEM_POINTS: string[] = [
   'Prediction markets settle on truth, but execution isn’t fair.',
-  'Alpha decays in milliseconds; humans arrive late.',
-  'Retail is structurally disadvantaged vs algorithmic trading desks.',
+  'Alpha decays in milliseconds; people arrive late.',
+  'Retail traders are structurally disadvantaged compared with algorithmic trading desks.',
 ];
 
 export const SOLUTION_POINTS: string[] = [
-  'Terminal + Vaults: elite-wallet signal feed + automated yield execution.',
-  'BRAID-powered agents produce bounded decision records.',
-  'Rust-first HFT execution with in-region/co-located routing.',
+  'Terminal and Vaults: elite wallet signal feed and automated yield execution.',
+  'OpenServ bounded agents produce decision records.',
+  'Rust-first high-frequency trading execution with in-region and co-located routing.',
 ];
 
 export const PRODUCT_POINTS: string[] = [
-  'Best signals across prediction markets → funneled into agents.',
-  'Agents trade for users with HFT infra → yield to depositors.',
-  'Deposit any asset with gasless chain abstraction via Enclave → Base vault.',
+  'Best signals across prediction markets are funnelled into agents.',
+  'Agents trade for users with high-frequency trading infrastructure, delivering yield to depositors.',
+  'Deposit any asset with gas-free chain abstraction via Enclave into the Base vault.',
 ];
 
 export const TRACTION_POINTS: string[] = [
   `${CORE_CLAIMS.totalSignals} signals collected in ${CORE_CLAIMS.totalSignalsWindow}.`,
-  `${CORE_CLAIMS.signalsPerDay} elite-wallet trade setups per day.`,
-  `${CORE_CLAIMS.latency} tick→trade (${CORE_CLAIMS.latencyDefinition})`,
+  `${CORE_CLAIMS.signalsPerDay} elite wallet trade setups per day.`,
+  `Tick-to-trade latency of ${CORE_CLAIMS.latency}.`,
 ];
 
 export const MOAT_POINTS: string[] = [
-  'Founder-led HFT/quant/market-making background.',
-  'Not vibe-coded: rails-first stack (ingestion → bounded agents → deterministic execution → vaults).',
-  'Rust-powered execution stack + co-location/in-region routing for low tick-to-trade latency.',
-  'Bulletproof backend: bounded reasoning graphs (OpenServ BRAID) reduce drift + cost; execution is deterministic with risk caps.',
-  'Exclusive partnerships: DomeAPI Rust SDK + OpenServ agent stack.',
+  'Founder-led high-frequency trading, quantitative, and market-making background.',
+  'Rails-first stack from ingestion to bounded agents, deterministic execution, and vaults.',
+  'Rust-powered execution stack with co-location and in-region routing for low tick-to-trade latency.',
+  'Bounded reasoning graphs from OpenServ reduce drift and cost; execution is deterministic with risk caps.',
+  'Exclusive partnerships with DomeAPI’s Rust software development kit and the OpenServ agent stack.',
 ];
 
 export const BUSINESS_MODEL = {
-  performanceFee: '20% performance fee on profits only',
+  performanceFee: 'Twenty per cent performance fee on profits only',
   performanceFeeTiming: 'charged on withdrawal',
   noLossFees:
-    'No fee if USDC withdrawn is below entry value (based on average share price entry).',
+    'No fee if USD Coin withdrawn is below entry value (based on average share price at entry).',
   accessGate:
-    'Hold to view Terminal; stake the same quantity to deposit into Vaults.',
+    'Hold BETTER tokens to view the Terminal; stake the same quantity to deposit into Vaults.',
   domeApiOption:
-    'Optional DomeAPI execution path: 2% fee per nominal trade (split TBD) + Terminal gate halved if enabled.',
+    'Optional DomeAPI execution path: a fee of two per cent per nominal trade (split to be determined). When enabled at log-in, the Terminal access requirement halves; vault access requirements remain unchanged across fully diluted valuation tiers.',
   b2b:
-    'B2B: sell Rust data + execution rails to prop shops, family offices, and hedge funds building prediction-market pods; revenue anchors for the ecosystem (SIG is hiring for PM traders).',
+    'Business-to-business: sell Rust data and execution rails to proprietary trading firms, family offices, and hedge funds building prediction market pods; revenue anchors for the ecosystem (Susquehanna International Group is hiring for prediction market traders).',
   llm:
-    'Post-TGE: buy GPU clusters to train an open-weight model tuned on BETTER alpha signals; sell API credits (Q2 2026).',
+    'After the token generation event: acquire graphics processing unit clusters to train an open-weight model tuned on BETTER alpha signals; sell application programming interface credits (second quarter of 2026).',
 } as const;
 
 export const THESIS = {
-  headline: 'The space is full of API wrappers. We’re building the rails.',
+  headline: 'The space is full of application programming interface wrappers. We are building the rails.',
   body:
-    'Most prediction-market projects are vibe-coded rearrangements of public APIs (Kalshi/Polymarket/Opinion). BETTER is building a rails-first stack: ingestion, bounded agents, deterministic execution, and composable vault shares.',
+    'Most prediction market projects are superficial rearrangements of public application programming interfaces (Kalshi, Polymarket, and Opinion). BETTER is building a rails-first stack: ingestion, bounded agents, deterministic execution, and composable vault shares.',
 } as const;
 
 export const STRATEGY_PHASES = [
   {
-    phase: 'Phase 1 (Q1 2026)',
-    title: 'Tokenize the Vault — solve Access',
-    pain: '“I want alpha but lack time/skill.”',
+    phase: 'Phase one (first quarter of 2026)',
+    title: 'Tokenise the Vault to solve access',
+    pain: '“I want alpha but lack time and skill.”',
     mechanism: [
-      'Token-gated Terminal + stake-to-enable vault deposits; expand signal sourcing via Kalshi/Opinion builder programs.',
-      'Ratchet gate as FDV rises (100k → 75k → 50k $BETTER) to keep $ access stable and reward early holders.',
-      'Vault execution powered by OpenServ BRAID-bounded agents + Rust HFT rails.',
-      'Enclave chain abstraction: gasless deposits from any asset into Base.',
+      'Token-gated Terminal and stake-to-enable vault deposits; expand signal sourcing via Kalshi and Opinion builder programmes.',
+      'Ratchet the gate as fully diluted valuation rises (100,000 to 75,000 to 50,000 BETTER tokens) to keep access costs stable and reward early holders.',
+      'Vault execution powered by OpenServ bounded reasoning agents and Rust high-frequency trading rails.',
+      'Enclave chain abstraction: gas-free deposits from any asset into Base.',
     ],
   },
   {
-    phase: 'Phase 2 (Q2 2026)',
-    title: 'Arbitrage Flywheel — solve Liquidity',
+    phase: 'Phase two (second quarter of 2026)',
+    title: 'Arbitrage flywheel to solve liquidity',
     pain: '“I need to exit without penalty.”',
     mechanism: [
       'vBETTER: a liquid receipt token for vault shares (Enzyme vault shares).',
-      'LP incentives on Aerodrome/Uniswap; secondary yield for depositors.',
-      'When vBETTER trades at a premium, mint/sell to capture spread → buy/burn $BETTER.',
+      'Liquidity provider incentives on Aerodrome and Uniswap; secondary yield for depositors.',
+      'When vBETTER trades at a premium, mint and sell to capture the spread, then buy and burn BETTER tokens.',
     ],
   },
   {
-    phase: 'Phase 3 (Q4 2026)',
-    title: 'The End Game — solve Leverage',
+    phase: 'Phase three (fourth quarter of 2026)',
+    title: 'The end game to solve leverage',
     pain: '“Spot prediction markets are binary; I want leverage or hedging.”',
     mechanism: [
-      '$TRUTH-PERP on Hyperliquid via HIP-3: an index for exposure across prediction markets (“Nasdaq of Truth”).',
-      'HIP-3 barrier: stake 500,000 HYPE (~$11M) — a moat against copycats.',
-      'Arb between vault AUM + $TRUTH-PERP → buy/burn $BETTER.',
+      'TRUTH perpetual contract on Hyperliquid via Hyperliquid Improvement Proposal 3: an index for exposure across prediction markets (“Nasdaq of Truth”).',
+      'Hyperliquid Improvement Proposal 3 barrier: stake 500,000 Hyperliquid tokens (approximately US$11 million) as a moat against copycats.',
+      'Arbitrage between vault assets under management and the TRUTH perpetual contract, then buy and burn BETTER tokens.',
     ],
   },
 ] as const;
 
 export const ACCESS_GATE_PHASES = [
   {
-    phase: 'Phase 1 (< $10M FDV)',
-    gate: '100,000 $BETTER',
-    examples: ['At $0.005 ($5M MC): ~$500', 'At $0.01 ($10M MC): ~$1,000'],
+    phase: 'Phase one (below US$10 million fully diluted valuation)',
+    gate: '100,000 BETTER tokens',
+    examples: [
+      'At US$0.005 (US$5 million market capitalisation): approximately US$500',
+      'At US$0.01 (US$10 million market capitalisation): approximately US$1,000',
+    ],
   },
   {
-    phase: 'Phase 2 ($10M–$20M FDV)',
-    gate: '75,000 $BETTER',
-    examples: ['At $0.02 ($20M MC): ~$1,500'],
+    phase: 'Phase two (US$10 million–US$20 million fully diluted valuation)',
+    gate: '75,000 BETTER tokens',
+    examples: ['At US$0.02 (US$20 million market capitalisation): approximately US$1,500'],
   },
   {
-    phase: 'Phase 3 ($20M–$40M FDV)',
-    gate: '50,000 $BETTER',
-    examples: ['At $0.04 ($40M MC): ~$2,000'],
+    phase: 'Phase three (US$20 million–US$40 million fully diluted valuation)',
+    gate: '50,000 BETTER tokens',
+    examples: ['At US$0.04 (US$40 million market capitalisation): approximately US$2,000'],
   },
   {
-    phase: 'Phase 4 ($100M+ FDV)',
-    gate: '10,000 $BETTER',
-    examples: ['At $0.10 ($100M MC): ~$1,000'],
+    phase: 'Phase four (US$100 million or more fully diluted valuation)',
+    gate: '10,000 BETTER tokens',
+    examples: ['At US$0.10 (US$100 million market capitalisation): approximately US$1,000'],
   },
 ] as const;
 
 export const TOKENOMICS = {
   totalSupply: '1,000,000,000',
   allocations: [
-    { label: 'Public Sale (Launchpad)', percent: 25, amount: '250,000,000', note: 'Unlocked at TGE' },
-    { label: 'Liquidity (Base/USDC LP)', percent: 15, amount: '150,000,000', note: 'Locked permanently' },
+    {
+      label: 'Public sale (launchpad)',
+      percent: 25,
+      amount: '250,000,000',
+      note: 'Unlocked at the token generation event',
+    },
+    {
+      label: 'Liquidity (Base and USD Coin liquidity pool)',
+      percent: 15,
+      amount: '150,000,000',
+      note: 'Locked permanently',
+    },
     {
       label: 'Team',
       percent: 20,
       amount: '200,000,000',
-      note: '0% at TGE; 6mo cliff then 9mo linear',
+      note: 'Zero per cent at the token generation event; six-month cliff then nine-month linear release',
     },
     {
       label: 'Treasury',
       percent: 25,
       amount: '250,000,000',
-      note: 'Unlocked at TGE (ops + KOL deals)',
+      note: 'Unlocked at the token generation event (operations and key opinion leader deals)',
     },
     {
-      label: 'OpenServ ($SERV) Drop',
+      label: 'OpenServ token drop',
       percent: 5,
       amount: '50,000,000',
-      note: 'Unlocked (claimed by $SERV stakers via tasks)',
+      note: 'Unlocked (claimed by OpenServ token stakers via tasks)',
     },
     {
       label: 'Programmatic Funding',
       percent: 10,
       amount: '100,000,000',
-      note: 'Released across FDV valuation bands',
+      note: 'Released across fully diluted valuation bands',
     },
   ],
 } as const;
 
 export const PROGRAMMATIC_FUNDING_SCHEDULE = [
-  { range: '$1M–$5M FDV', soldPercent: '2%', raiseUsd: '$60,000', cumulativeUsd: '$60,000' },
-  { range: '$5M–$10M FDV', soldPercent: '2%', raiseUsd: '$150,000', cumulativeUsd: '$210,000' },
-  { range: '$10M–$20M FDV', soldPercent: '2%', raiseUsd: '$300,000', cumulativeUsd: '$510,000' },
-  { range: '$20M–$50M FDV', soldPercent: '2%', raiseUsd: '$700,000', cumulativeUsd: '$1,210,000' },
-  { range: '$50M–$100M FDV', soldPercent: '2%', raiseUsd: '$1,500,000', cumulativeUsd: '$2,710,000' },
+  {
+    range: 'US$1 million–US$5 million fully diluted valuation',
+    soldPercent: '2 per cent',
+    raiseUsd: 'US$60,000',
+    cumulativeUsd: 'US$60,000',
+  },
+  {
+    range: 'US$5 million–US$10 million fully diluted valuation',
+    soldPercent: '2 per cent',
+    raiseUsd: 'US$150,000',
+    cumulativeUsd: 'US$210,000',
+  },
+  {
+    range: 'US$10 million–US$20 million fully diluted valuation',
+    soldPercent: '2 per cent',
+    raiseUsd: 'US$300,000',
+    cumulativeUsd: 'US$510,000',
+  },
+  {
+    range: 'US$20 million–US$50 million fully diluted valuation',
+    soldPercent: '2 per cent',
+    raiseUsd: 'US$700,000',
+    cumulativeUsd: 'US$1,210,000',
+  },
+  {
+    range: 'US$50 million–US$100 million fully diluted valuation',
+    soldPercent: '2 per cent',
+    raiseUsd: 'US$1,500,000',
+    cumulativeUsd: 'US$2,710,000',
+  },
 ] as const;
 
 export const ASK = {
-  amount: '$500k SAFE',
+  amount: 'US$500,000 via a simple agreement for future equity',
   runway: '9 months',
   useOfFunds: [
-    { label: 'Infra / Eng / Compute', percent: 50 },
+    { label: 'Infrastructure, engineering, and compute', percent: 50 },
     { label: 'Audits', percent: 15 },
-    { label: 'Legal + Ops', percent: 10 },
-    { label: 'Growth + Community', percent: 15 },
+    { label: 'Legal and operations', percent: 10 },
+    { label: 'Growth and community', percent: 15 },
     { label: 'Liquidity', percent: 5 },
     { label: 'Marketing', percent: 5 },
   ],
@@ -197,35 +235,47 @@ export const ASK = {
 } as const;
 
 export const ROADMAP = [
-  { when: 'Jan 21, 2026', what: 'TGE (Terminal live minimum that week)' },
-  { when: 'Jan 2026', what: 'Vaults live' },
-  { when: 'Mar 2026 (Q1)', what: 'Kalshi + Opinion integrations complete' },
-  { when: 'End of Q1 2026', what: 'B2B Rust data-ingestion product (Polymarket + Kalshi)' },
-  { when: 'Q2 2026', what: 'In-house open-source model training + API credits' },
-  { when: 'Q1 2026', what: 'Tokenized vault shares (vBETTER)' },
-  { when: 'Q2 2026', what: 'Arbitrage flywheel' },
-  { when: 'Q4 2026', what: '$TRUTH-PERP on Hyperliquid' },
+  {
+    when: '21 January 2026',
+    what: 'Token generation event (Terminal live at a minimum that week)',
+  },
+  { when: 'January 2026', what: 'Vaults live' },
+  {
+    when: 'March 2026 (first quarter)',
+    what: 'Kalshi and Opinion integrations complete',
+  },
+  {
+    when: 'End of the first quarter of 2026',
+    what: 'Business-to-business Rust data ingestion product (Polymarket and Kalshi)',
+  },
+  {
+    when: 'Second quarter of 2026',
+    what: 'In-house open-source model training and application programming interface credits',
+  },
+  { when: 'First quarter of 2026', what: 'Tokenised vault shares (vBETTER)' },
+  { when: 'Second quarter of 2026', what: 'Arbitrage flywheel' },
+  { when: 'Fourth quarter of 2026', what: 'TRUTH perpetual contract on Hyperliquid' },
 ] as const;
 
 export const TEAM = [
   {
     name: 'Aryaman Chhaya',
-    title: 'Founder • Quantitative Developer',
+    title: 'Founder • Quantitative developer',
     bullets: [
       'Bachelor of Actuarial Studies.',
-      'Buy-side quant: engineered BTC futures market-making in Rust, ~+$75k/week P&L on ~$500k inventory; low-latency execution.',
-      '$1.2M–$9M BTC calendar spread books (monthly/weekly futures); refined delta exposure in 24/7 markets.',
-      '7+ Sortino regime filter backtest (2010–): long spot when global liquidity RoC turned positive.',
+      'Buy-side quantitative researcher: engineered Bitcoin futures market-making in Rust, approximately US$75,000 per week profit and loss on approximately US$500,000 of inventory, with low-latency execution.',
+      'Managed US$1.2 million–US$9 million Bitcoin calendar spread books (monthly and weekly futures), refining delta exposure in continuous markets.',
+      'Sortino ratio above seven regime filter backtest (from 2010 onwards): long spot when the global liquidity rate of change turned positive.',
     ],
   },
   {
     name: 'Cooper Winton',
-    title: 'Quantitative Researcher (Trading Logic)',
+    title: 'Quantitative researcher (trading logic)',
     bullets: [
       'Bachelor of Statistics.',
-      'Mean-reversion + pairs selection: OU framework + Optics/DBSCAN (Sarmento & Horta); backtested and paper-traded (QuantConnect).',
-      'Solana HFT R&D: cross-DEX arbitrage + front-running detectors; Rust + runtime-level understanding.',
-      'Hardware-oriented low-latency design (Xenon FPGA / ExaNIC); targeting sub-ms tick-to-trade via colocation.',
+      'Mean-reversion and pairs selection: Ornstein–Uhlenbeck framework and Ordering Points To Identify the Clustering Structure and Density-Based Spatial Clustering of Applications with Noise clustering (Sarmento and Horta); back-tested and paper-traded using QuantConnect.',
+      'Solana high-frequency trading research and development: cross-decentralised-exchange arbitrage and front-running detectors; Rust and runtime-level understanding.',
+      'Hardware-oriented low-latency design (Xenon field-programmable gate array and ExaNIC); targeting sub-millisecond tick-to-trade via co-location.',
     ],
   },
 ] as const;
@@ -234,11 +284,11 @@ export const PARTNERS = [
   'Polymarket',
   'Kalshi',
   'Opinion',
-  'OpenServ (BRAID)',
+  'OpenServ',
   'DomeAPI',
   'Enclave',
   'Enzyme',
-  'Hyperliquid (HIP-3)',
+  'Hyperliquid (Improvement Proposal 3)',
 ] as const;
 
 export const SLIDE_NAV = [
@@ -246,7 +296,7 @@ export const SLIDE_NAV = [
   { id: 's2', label: '02 Problem' },
   { id: 's3', label: '03 Solution' },
   { id: 's4', label: '04 Product' },
-  { id: 's5', label: '05 Why Now' },
+  { id: 's5', label: '05 Why now' },
   { id: 's6', label: '06 Strategy' },
   { id: 's7', label: '07 Traction' },
   { id: 's8', label: '08 Moat' },

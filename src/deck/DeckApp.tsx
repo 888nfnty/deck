@@ -160,7 +160,7 @@ export const DeckApp: React.FC = () => {
                     rel="noreferrer"
                     className="border border-white/20 bg-white/10 px-4 py-2 text-[13px] text-white hover:bg-white/15"
                   >
-                    Get in Touch
+                    Get in touch
                   </a>
                 </div>
 
@@ -171,7 +171,7 @@ export const DeckApp: React.FC = () => {
                     rel="noreferrer"
                     className="border border-white/20 bg-transparent px-3 py-2 text-[13px] text-white/80 hover:bg-white/5"
                   >
-                    X
+                    X (formerly Twitter)
                   </a>
                   <a
                     href={DECK_META.telegramUrl}
@@ -187,7 +187,7 @@ export const DeckApp: React.FC = () => {
                     rel="noreferrer"
                     className="border border-white/20 bg-transparent px-3 py-2 text-[13px] text-white/80 hover:bg-white/5"
                   >
-                    Thesis / Genesis
+                    Thesis and genesis
                   </a>
                   <a
                     href={DECK_META.openservUrl}
@@ -227,20 +227,20 @@ export const DeckApp: React.FC = () => {
                 <GlassCard className="p-6">
                   <div className="text-[13px] text-white/70">What BETTER is</div>
                   <div className="mt-3 text-[15px] leading-7 text-white">
-                    A rails-first terminal + vault system that turns prediction-market signals into automated yield.
+                    A rails-first Terminal and Vault system that turns prediction market signals into automated yield.
                   </div>
                   <div className="mt-6 grid gap-3">
                     <div className="border border-white/10 bg-black/25 p-4">
                       <div className="text-[12px] text-white/60">Terminal</div>
-                      <div className="mt-1 text-[14px] text-white">Elite-wallet signal feed</div>
+                      <div className="mt-1 text-[14px] text-white">Elite wallet signal feed</div>
                     </div>
                     <div className="border border-white/10 bg-black/25 p-4">
                       <div className="text-[12px] text-white/60">Vaults</div>
                       <div className="mt-1 text-[14px] text-white">Agents trade for depositors</div>
                     </div>
                     <div className="border border-white/10 bg-black/25 p-4">
-                      <div className="text-[12px] text-white/60">Infra</div>
-                      <div className="mt-1 text-[14px] text-white">Rust HFT stack + co-location</div>
+                      <div className="text-[12px] text-white/60">Infrastructure</div>
+                      <div className="mt-1 text-[14px] text-white">Rust high-frequency trading stack and co-location</div>
                     </div>
                   </div>
                 </GlassCard>
@@ -254,7 +254,7 @@ export const DeckApp: React.FC = () => {
               <div className="md:col-span-7">
                 <SectionTitle
                   kicker="Problem"
-                  title="Truth-settled markets. Latency-unfair execution."
+                  title="Truth-settled markets. Latency makes execution unfair."
                   subtitle="Prediction markets are growing, but the edge window is measured in milliseconds."
                 />
                 <BulletList items={PROBLEM_POINTS} />
@@ -279,7 +279,7 @@ export const DeckApp: React.FC = () => {
               <div className="md:col-span-7">
                 <SectionTitle
                   kicker="Solution"
-                  title="Agents + HFT execution for prediction-market alpha"
+                  title="Agents and high-frequency trading execution for prediction market alpha"
                   subtitle="BETTER turns informed flow into bounded, machine-executable action — then executes deterministically." 
                 />
                 <BulletList items={SOLUTION_POINTS} />
@@ -293,17 +293,17 @@ export const DeckApp: React.FC = () => {
                       rel="noreferrer"
                       className="mt-2 inline-block text-[14px] text-white hover:underline"
                     >
-                      OpenServ BRAID (bounded reasoning)
+                      OpenServ bounded reasoning
                     </a>
                     <div className="mt-2 text-[12px] leading-6 text-white/60">
-                      Bounded Mermaid graphs reduce drift and improve reliability and cost-efficiency.
+                      Bounded Mermaid graphs reduce drift and improve reliability and cost efficiency.
                     </div>
                   </GlassCard>
                   <GlassCard className="p-5">
                     <div className="text-[12px] text-white/60">Built in</div>
-                    <div className="mt-2 text-[14px] text-white">Rust for HFT</div>
+                    <div className="mt-2 text-[14px] text-white">Rust for high-frequency trading</div>
                     <div className="mt-2 text-[12px] leading-6 text-white/60">
-                      Deterministic execution + routing engineered for low tick-to-trade latency.
+                      Deterministic execution and routing engineered for low tick-to-trade latency.
                     </div>
                   </GlassCard>
                 </div>
@@ -321,14 +321,14 @@ export const DeckApp: React.FC = () => {
               <div className="md:col-span-7">
                 <SectionTitle
                   kicker="Product"
-                  title="Terminal + Vaults, designed as one system"
+                  title="Terminal and Vaults, designed as one system"
                   subtitle="A signal feed for decision quality — and vault execution that runs while you sleep."
                 />
                 <BulletList items={PRODUCT_POINTS} />
 
                 <div className="mt-8 grid gap-3 md:grid-cols-3">
-                  <MetricCard label="Signals/day" value={CORE_CLAIMS.signalsPerDay} note="Elite-wallet trade setups" />
-                  <MetricCard label="Tick→trade" value={CORE_CLAIMS.latency} note={CORE_CLAIMS.latencyDefinition} />
+                  <MetricCard label="Signals per day" value={CORE_CLAIMS.signalsPerDay} note="Elite wallet trade setups" />
+                  <MetricCard label="Tick to trade" value={CORE_CLAIMS.latency} note={CORE_CLAIMS.latencyDefinition} />
                   <MetricCard label="Markets" value="3" note="Polymarket • Kalshi • Opinion" />
                 </div>
               </div>
@@ -337,8 +337,8 @@ export const DeckApp: React.FC = () => {
                   <div className="text-[13px] text-white/70">Execution discipline</div>
                   <div className="mt-3 space-y-3 text-[14px] leading-7 text-white/80">
                     <div>• Inference is bounded; execution is deterministic.</div>
-                    <div>• Admissibility, edge tests, caps, and idempotent order lifecycle.</div>
-                    <div>• Malformed inference outputs → abstain (never unsafe trades).</div>
+                    <div>• Admissibility, edge tests, caps, and an idempotent order lifecycle.</div>
+                    <div>• If inference outputs are malformed, abstain (never unsafe trades).</div>
                   </div>
                 </GlassCard>
               </div>
@@ -352,26 +352,26 @@ export const DeckApp: React.FC = () => {
                 <SectionTitle
                   kicker="Why now"
                   title="The structural rotation is underway"
-                  subtitle="Capital is migrating from opaque perp games toward verifiable event settlement — but speed remains the gate." 
+                  subtitle="Capital is migrating from opaque perpetual futures games towards verifiable event settlement, but speed remains the gate." 
                 />
 
                 <div className="mt-8 grid gap-3 md:grid-cols-2">
                   <GlassCard className="p-6">
                     <div className="text-[12px] text-white/60">Macro shift</div>
                     <div className="mt-2 text-[14px] leading-7 text-white">
-                      “Casino” fatigue in perps → demand for truth-settled markets.
+                      “Casino” fatigue in perpetual futures drives demand for truth-settled markets.
                     </div>
                   </GlassCard>
                   <GlassCard className="p-6">
                     <div className="text-[12px] text-white/60">Tech shift</div>
                     <div className="mt-2 text-[14px] leading-7 text-white">
-                      CLOB + onchain data + agents → retail-grade automation.
+                      Central limit order book and on-chain data, plus agents, enable retail-grade automation.
                     </div>
                   </GlassCard>
                   <GlassCard className="p-6 md:col-span-2">
                     <div className="text-[12px] text-white/60">BETTER wedge</div>
                     <div className="mt-2 text-[14px] leading-7 text-white">
-                      Unify signal quality + machine-speed execution across Polymarket, Kalshi, and Opinion.
+                      Unify signal quality and machine-speed execution across Polymarket, Kalshi, and Opinion.
                     </div>
                   </GlassCard>
                 </div>
@@ -380,9 +380,9 @@ export const DeckApp: React.FC = () => {
                 <GlassCard className="p-6">
                   <div className="text-[13px] text-white/70">Near-term platform plan</div>
                   <div className="mt-4 space-y-3 text-[14px] leading-7 text-white/80">
-                    <div>• Start with Polymarket execution + Base deposits.</div>
-                    <div>• Expand to Kalshi + Opinion by March 2026.</div>
-                    <div>• Become the infra partner for prediction markets.</div>
+                    <div>• Start with Polymarket execution and Base deposits.</div>
+                    <div>• Expand to Kalshi and Opinion by March 2026.</div>
+                    <div>• Become the infrastructure partner for prediction markets.</div>
                   </div>
                 </GlassCard>
               </div>
@@ -442,24 +442,24 @@ export const DeckApp: React.FC = () => {
             <div className="grid gap-10 md:grid-cols-12 md:gap-12">
               <div className="md:col-span-7">
                 <SectionTitle
-                  kicker="Traction (pre-TGE)"
-                  title="Infra + dataset ahead of launch"
-                  subtitle="We’re pre-TGE: no TVL and no live trades yet — but the signal engine + execution stack are built and tested." 
+                  kicker="Traction (before the token generation event)"
+                  title="Infrastructure and dataset ahead of launch"
+                  subtitle="We are before the token generation event: no total value locked and no live trades yet, but the signal engine and execution stack are built and tested." 
                 />
 
                 <div className="mt-10 grid gap-3 md:grid-cols-3">
                   <MetricCard label="Signals collected" value={CORE_CLAIMS.totalSignals} note={`Over ${CORE_CLAIMS.totalSignalsWindow}`} />
-                  <MetricCard label="Signals/day" value={CORE_CLAIMS.signalsPerDay} note="Elite-wallet trade setups" />
+                  <MetricCard label="Signals per day" value={CORE_CLAIMS.signalsPerDay} note="Elite wallet trade setups" />
                   <MetricCard label="Latency" value={CORE_CLAIMS.latency} note={CORE_CLAIMS.latencyDefinition} />
                 </div>
 
                 <GlassCard className="mt-8 p-6">
-                  <div className="text-[13px] text-white/70">What counts as a “signal”</div>
+                  <div className="text-[13px] text-white/70">What counts as a signal</div>
                   <div className="mt-3 text-[14px] leading-7 text-white/80">
-                    A trade setup emitted from elite wallets / traders with unfair informational access — distilled for machine execution.
+                    A trade setup emitted from elite wallets and traders with unfair informational access, distilled for machine execution.
                   </div>
                   <div className="mt-3 text-[13px] leading-6 text-white/60">
-                    Monthly backtest snapshots will be published post-TGE.
+                    Monthly backtest snapshots will be published after the token generation event.
                   </div>
                 </GlassCard>
 
@@ -471,7 +471,7 @@ export const DeckApp: React.FC = () => {
               <div className="md:col-span-5">
                 <div className="space-y-3">
                   <GlassCard className="p-6">
-                    <div className="text-[13px] text-white/70">Signals → agents → execution</div>
+                    <div className="text-[13px] text-white/70">Signals, agents, and execution</div>
                     <div className="mt-4 text-[14px] leading-7 text-white/80">
                       BETTER turns signal quality into machine-speed action, targeting the short-lived alpha window.
                     </div>
@@ -488,7 +488,7 @@ export const DeckApp: React.FC = () => {
               <div className="md:col-span-7">
                 <SectionTitle
                   kicker="Moat"
-                  title="Execution speed + bounded agents"
+                  title="Execution speed and bounded agents"
                   subtitle={CORE_CLAIMS.positioning}
                 />
                 <BulletList items={MOAT_POINTS} />
@@ -507,8 +507,8 @@ export const DeckApp: React.FC = () => {
           <SlideSection id="s9">
             <SectionTitle
               kicker="Business"
-              title="Token-gated access + B2B infrastructure revenue"
-              subtitle="BETTER monetizes both retail yield automation and institutional-grade data + execution." 
+              title="Token-gated access and business-to-business infrastructure revenue"
+              subtitle="BETTER monetises both retail yield automation and institutional-grade data and execution." 
             />
 
             <div className="mt-10 grid gap-3 md:grid-cols-3">
@@ -525,7 +525,7 @@ export const DeckApp: React.FC = () => {
                 <div className="mt-3 text-[12px] leading-6 text-white/60">{BUSINESS_MODEL.domeApiOption}</div>
               </GlassCard>
               <GlassCard className="p-6">
-                <div className="text-[12px] text-white/60">B2B + API</div>
+                <div className="text-[12px] text-white/60">Business-to-business and application programming interface</div>
                 <div className="mt-2 text-[14px] leading-7 text-white">{BUSINESS_MODEL.b2b}</div>
                 <div className="mt-3 text-[12px] leading-6 text-white/60">{BUSINESS_MODEL.llm}</div>
               </GlassCard>
@@ -536,8 +536,8 @@ export const DeckApp: React.FC = () => {
           <SlideSection id="s10">
             <SectionTitle
               kicker="Token"
-              title="Tokenomics + access gate"
-              subtitle={`Total supply: ${TOKENOMICS.totalSupply} $BETTER`} 
+              title="Token economics and access gate"
+              subtitle={`Total supply: ${TOKENOMICS.totalSupply} BETTER tokens`} 
             />
 
             <div className="mt-10 grid gap-10 md:grid-cols-12 md:gap-12">
@@ -568,7 +568,7 @@ export const DeckApp: React.FC = () => {
 
               <div className="md:col-span-6 space-y-3">
                 <GlassCard className="p-6">
-                  <div className="text-[13px] text-white/70">Access gate (hold/stake)</div>
+                  <div className="text-[13px] text-white/70">Access gate (hold and stake)</div>
                   <div className="mt-4 space-y-3">
                     {ACCESS_GATE_PHASES.map((p) => (
                       <div key={p.phase} className="border border-white/10 bg-black/20 p-4">
@@ -585,17 +585,17 @@ export const DeckApp: React.FC = () => {
                     ))}
                   </div>
                   <div className="mt-4 text-[12px] leading-6 text-white/55">
-                    Terminal gate halves if DomeAPI execution is enabled.
+                    The Terminal access requirement halves if a DomeAPI fee of two per cent per trade is enabled at log-in; vault access requirements remain unchanged across fully diluted valuation tiers.
                   </div>
                 </GlassCard>
 
                 <GlassCard className="p-6">
-                  <div className="text-[13px] text-white/70">Programmatic funding (10%)</div>
+                  <div className="text-[13px] text-white/70">Programmatic funding (10 per cent)</div>
                   <div className="mt-4 overflow-x-auto">
                     <table className="w-full min-w-[520px] border-collapse text-left">
                       <thead>
                         <tr className="border-b border-white/10">
-                          <th className="py-2 pr-3 text-[12px] font-medium text-white/60">FDV range</th>
+                          <th className="py-2 pr-3 text-[12px] font-medium text-white/60">Fully diluted valuation range</th>
                           <th className="py-2 pr-3 text-[12px] font-medium text-white/60">Sold</th>
                           <th className="py-2 pr-3 text-[12px] font-medium text-white/60">Raise</th>
                           <th className="py-2 text-[12px] font-medium text-white/60">Cumulative</th>
@@ -622,8 +622,8 @@ export const DeckApp: React.FC = () => {
           <SlideSection id="s11">
             <SectionTitle
               kicker="Team"
-              title="Market-making DNA + execution engineering"
-              subtitle="Two-person quant team: one builds the rails, one defines the trading logic." 
+              title="Market-making discipline and execution engineering"
+              subtitle="Two-person quantitative team: one builds the rails and one defines the trading logic." 
             />
 
             <div className="mt-10 grid gap-3 md:grid-cols-2">
@@ -650,7 +650,7 @@ export const DeckApp: React.FC = () => {
               <div className="md:col-span-7">
                 <SectionTitle
                   kicker="Ask"
-                  title={`Raising ${ASK.amount} to ship the Terminal + Vaults`}
+                  title={`Raising ${ASK.amount} to ship the Terminal and Vaults`}
                   subtitle={`Runway: ${ASK.runway}. ${ASK.salaryNote}`}
                 />
 
@@ -681,7 +681,7 @@ export const DeckApp: React.FC = () => {
                     rel="noreferrer"
                     className="border border-white/20 bg-white/10 px-5 py-3 text-[13px] text-white hover:bg-white/15"
                   >
-                    Get in Touch
+                    Get in touch
                   </a>
                   <a
                     href={DECK_META.siteUrl}
