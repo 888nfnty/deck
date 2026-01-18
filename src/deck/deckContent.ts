@@ -4,12 +4,13 @@ export const DECK_META = {
   raiseLine: 'Raising US$500,000 via a simple agreement for future equity',
   siteUrl: 'https://tradebetter.app',
   calendlyUrl: 'https://calendly.com/aryaman-chhaya/openserv-x-better',
+  docsUrl: 'https://docs.tradebetter.app',
   telegramUrl: 'http://t.me/betterterminal',
   xUrl: 'https://x.com/tradebetterapp',
   thesisUrl: 'https://x.com/tradebetterapp/status/2001641362278748251',
   openservUrl: 'https://openserv.ai',
-  email: 'arychhaya@proton.me',
-  emailUrl: 'mailto:arychhaya@proton.me',
+  email: 'contact@tradebetter.app',
+  emailUrl: 'mailto:contact@tradebetter.app',
   handle: '@tradebetterapp',
 } as const;
 

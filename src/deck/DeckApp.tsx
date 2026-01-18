@@ -171,6 +171,14 @@ export const DeckApp: React.FC = () => {
                   >
                     Get in touch
                   </a>
+                  <a
+                    href={DECK_META.docsUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="border border-white/20 bg-transparent px-4 py-2 text-[13px] text-white/80 hover:bg-white/5"
+                  >
+                    Documentation
+                  </a>
                 </div>
 
                 <div className="mt-4 flex flex-wrap items-center gap-2">
@@ -697,6 +705,14 @@ export const DeckApp: React.FC = () => {
                     className="border border-white/20 bg-white/10 px-5 py-3 text-[13px] text-white hover:bg-white/15"
                   >
                     Get in touch
+                  </a>
+                  <a
+                    href={DECK_META.docsUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="border border-white/20 bg-transparent px-5 py-3 text-[13px] text-white/80 hover:bg-white/5"
+                  >
+                    Documentation
                   </a>
                   <a
                     href={DECK_META.siteUrl}
