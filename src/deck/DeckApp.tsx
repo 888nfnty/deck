@@ -548,7 +548,7 @@ export const DeckApp: React.FC = () => {
                 <div className="mt-3 text-[12px] leading-6 text-white/60">{BUSINESS_MODEL.domeApiOption}</div>
               </GlassCard>
               <GlassCard className="p-6">
-                <div className="text-[12px] text-white/60">Business-to-business and application programming interface</div>
+                <div className="text-[12px] text-white/60">Business-to-business and API</div>
                 <div className="mt-2 text-[14px] leading-7 text-white">{BUSINESS_MODEL.b2b}</div>
                 <div className="mt-3 text-[12px] leading-6 text-white/60">{BUSINESS_MODEL.llm}</div>
               </GlassCard>

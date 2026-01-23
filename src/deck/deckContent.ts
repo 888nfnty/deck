@@ -77,13 +77,13 @@ export const BUSINESS_MODEL = {
   b2b:
     'Business-to-business: sell Rust data and execution rails to proprietary trading firms, family offices, and hedge funds building prediction market pods; revenue anchors for the ecosystem (Susquehanna International Group is hiring for prediction market traders).',
   llm:
-    'After the token generation event: acquire graphics processing unit clusters to train an open-weight model tuned on BETTER alpha signals; sell application programming interface credits (second quarter of 2026).',
+    'After the token generation event: acquire graphics processing unit clusters to train an open-weight model tuned on BETTER alpha signals; sell API credits (second quarter of 2026).',
 } as const;
 
 export const THESIS = {
-  headline: 'The space is full of application programming interface wrappers. We are building the rails.',
+  headline: 'The space is full of API wrappers. We are building the rails.',
   body:
-    'Most prediction market projects are superficial rearrangements of public application programming interfaces (Kalshi, Polymarket, and Opinion). BETTER is building a rails-first stack: ingestion, bounded agents, deterministic execution, and composable vault shares.',
+    'Most prediction market projects are superficial rearrangements of public APIs (Kalshi, Polymarket, and Opinion). BETTER is building a rails-first stack: ingestion, bounded agents, deterministic execution, and composable vault shares.',
 } as const;
 
 export const STRATEGY_PHASES = [
